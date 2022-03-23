@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+body:not(footer){
+	margin:0;
+	padding:0;
+	background-color: #1E1F29;
+}
+
+html:not(footer){
+	background-color: #1E1F29;
+	font-family: 'Montserrat',sans-serif;
+	color: white;
+	overflow-x: hidden;
+}
+
+html:not(footer){
+	text-align: center;
+}
+
+
+body:not(footer){
+	margin:auto;
+}
+
+a:not(footer){
+	text-decoration: none;
+	color: white;
+}
+
+.t:not(footer){
+	font-weight: 700;
+	font-size: 240%;
+	padding-top: 90px;
+	color:#D10024;
+}
+
+.s:not(footer){
+	font-weight: 200;
+	font-size: 150%;
+	padding-top: 30px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+p .crph:not(footer){
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+p .namecrph:not(footer){
+	padding: 0;
+}
+
+p.txt-ml{
+	color:white;
+}
+
+img#logo:not(footer){
+	width: 35%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 12%;
+	padding-bottom: 5%;
+}
+
+.editor:not(footer) {
+	padding-top: 3%;
+}
+
+.nameleg:not(footer){
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.namecomp:not(footer){
+	padding-bottom: 4%;
+}
+
+
+@media (max-width: 1024px){
+	body:not(header,footer){
+		margin:0 15px;
+	}
+	img#logo:not(footer){
+		padding-top: 40%;
+		width: 40%;
+		padding-bottom: 19%;
+	}
+	.t:not(footer){
+		font-size: 150%;
+	}
+	.s:not(footer){
+		font-size: 115%;
+	}
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" href="img/favicon.ico" />
+    <title>Magazon - Check-out</title>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fin.css">
+</head>
+<body>
+    <div class="load" id="load">
+        <img id="logo-load" src="img/logo.svg">
+        <div class="txt-load">
+            <p class="txt" id="txt-load">
+                Check-out en cours de chargement...
+            </p>
+        </div>
+        <div class="loader">
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+<div style="background-color: #1E1F29;" id="PDF">
+    <a href="#"><img id="logo-fin" src="img/logo.svg"></a>
+    <img src="img/bulle_pdf.svg" id="bulle-pdf" alt="Bulle">
+    <div id="perso-fin">
+        <img id="femme" src="img/girl.png" class="perso-fin" alt="Personnage">
+        <img id="homme" src="img/emeric_face.png" class="perso-fin" alt="Personnage">
+    </div>
+    <div class="fleche">
+        <a href="#achats" class="js-scrollTo"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+    </div>
+    <div id="achats">
+        <h2>Vos achats :</h2>
+        <table id="tab-achats">
+        </table>
+    </div>
+    <div id="tab-interet">
+        <h2>Vos centres d’interêts :</h2>
+        <div id="interet">
+        </div>
+    </div>
+    <h2>Bilan :</h2>
+    <div id="fin-conclusion">
+        <p>Un des points positifs d’internet est l'<span class="red">anonymat</span>. Vous avez surement déjà croisé des publicités concernant des produits que vous avez déjà visité. Ce <span class="red">ciblage</span> est permis grâce aux cookies.</p>
+        <p>Il s’agit d’informations présentes dans votre navigateur que vous avez autorisé de conserver. Souvenez-vous du bouton que le personnage vous a montré. Dans la réalité lorsque vous allez dans un magasin vous êtes libre de voir ce que bon vous semble et le vendeur vous demandera d’abord ce que vous cherchez.</p><br>
+        <p>En ligne <span class="red">grâce aux cookies</span>, les sites marchands ont <span class="red">connaissance des pages</span> que vous avez consulté et ciblent donc les produits et les publicités en fonction de vos anciennes recherches. Imaginez vous, rentrer dans un magasin et être abordé par le vendeur qui connaît votre personnalité.</p><br>
+        <p>Toutefois il existe <span class="red">deux types</span> de cookies. Les <span class="red">cookies première partie</span> qui eux permettent une meilleure expérience dans le site et les <span class="red">cookies tiers</span> qui eux sont notamment utilisés pour le ciblage des publicités.</p><br>
+        <p>Nous vous recommandons donc, lorsqu’il est possible, de <span class="red">refuser</span> les cookies ou de les personnaliser en les <span class="red">limitant au maximum</span>. Nous vous recommandons également de <span class="red">supprimer</span> vos cookies depuis l’historique de votre navigateur ou bien de les interdire dans les paramètres.</p>
+        <p>Sous Google Chrome il existe une option qui supprime les cookies à chaque fermeture du navigateur.</p><br>
+        <p>Faites attention à <span class="red">vos données</span> personnelles sur le web.</p>
+    </div>
+    <div class="texte-fin">
+
+    </div>
+    <a id="pdf" href="" target="_blank" download="Magazon-bilan">
+        <input id="but-dl" type="button" name="download" value="Télécharger bilan">
+     </a>
+
+     <a id="restart" href="index.html">
+        <input id="but-restart" type="button" name="Restart" value="Recommencer">
+     </a>
+</div>
+    <div class="copyright" id="copyright">
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This interactive artwork was made with <i class="fa fa-heart-o"></i> by <a href="https://mmi.univ-smb.fr/~maiadacg/mmission/" target="_blank">MMI'ssion</a>
+    </div>
+
+    <script src="js/accueil.js"></script>
+    <script src="js/fin.js"></script>
+    <script src="js/smoothScroll.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+    window.onload = function () {
+        achats = "";
+        commande = JSON.parse(localStorage.getItem("commande"));
+        for (var i =0; i<commande.length;i=i+2)
+        {
+            achats += "<tr><td>"+commande[i]+"</td><td>"+commande[i+1]+" C</td></tr>";
+        }
+        document.getElementById('tab-achats').innerHTML= achats;
+        
+        interet = "";
+        var japon = localStorage.getItem("japon");
+        var foot = localStorage.getItem("foot");
+        var reflexion = localStorage.getItem("reflexion");
+        var vetement = localStorage.getItem("vetement");
+        var jv = localStorage.getItem("jv");
+        var livre = localStorage.getItem("livre");
+        var sport = localStorage.getItem("sport");
+
+
+        if (japon<=1 && foot<=1  && reflexion<=1  && vetement<=1  && jv<=1  && livre<=1  && sport<=1 ) {
+            interet += "<p>Les articles que vous avez visité n'ont pas permis de définir vos centres d'intérêt précis. Toutefois les articles visités peuvent être gardés en mémoire et additionnés à vos futures recherches. </p><br>";
+        }
+
+        if(japon>1)
+        {
+            interet += "<p>Serais-tu fan du Japon ou peut être simplement fan de mangas ? Moi aussi quelle coïncidence ! Je sais que tu es nippon dans l'âme car tu as cliqué sur <span class='red'>"+japon+"</span> articles en rapport avec le Japon.</p><br>";
+        }
+
+        if(foot>1)
+        {
+            interet += "<p>Le football a l'air de t'intéresser car tu as cliqué sur <span class='red'>"+foot+"</span> articles en rapport avec le foot. Tu savais que Zidane aussi a sorti des livres sur lui ?  </p><br>";
+        }
+
+        if(reflexion>1)
+        {
+            interet += "<p>Tu aimes te creuser les méninges n'est-ce pas ? Tu as cliqué sur <span class='red'>"+reflexion+"</span> articles en rapport avec la réflexion. Tu devrais t'essayer aux casse-têtes !</p><br>";
+        }
+
+        if(vetement>1)
+        {
+            interet += "<p>Tu as vu les dernières off-white ? Elles sont incroyables ! Je sais que tu es une fashion victim car tu as cliqué sur <span class='red'>"+vetement+"</span> articles en rapport avec les vêtements.</p><br>";
+        }
+
+        if(jv>1)
+        {
+            interet += "<p>On se fait une game ? J'ai déjà précommandé Cyberpunk 2077, et toi ? Je sais que tu aimes le gaming car tu as cliqué sur <span class='red'>"+jv+"</span> articles en rapport avec les jeux-vidéo.</p><br>";
+        }
+
+        if(livre>1)
+        {
+            interet += "<p>Si tu aimes lire j'ai plein de recommandations pour toi ! Je sais que tu aimes bouquiner car tu as cliqué sur <span class='red'>"+livre+"</span> articles en rapport avec les livres.</p><br>";
+        }
+
+        if(sport>1)
+        {
+            interet += "<p>Tu est un fervent sportif. Je le sais car tu as cliqué sur <span class='red'>"+sport+"</span> articles en rapport avec le sport. Il ne te manque plus qu'un sac pour tout transporter ! </p><br>";
+        }
+
+        document.getElementById('interet').innerHTML= interet;
+
+        localStorage.clear();
+    }
+    </script>
+ 
+</body>
+</html>
+
+
+<!--
+                                           @@@@@@@@@@@@@@@@@                            @@@@@@@@@@@@@@@@@                                             
+                                           @@@@@@@@@@@@@@@@@                           @@@@@@@@@@@@@@@@@@                                             
+                                          @@@@@@@@@@@@@@@@@@@                         @@@@@@@@@@@@@@@@@@@                                             
+                                          @@@@@@@@@@@@@@@@@@@@                       @@@@@@@@@@@@@@@@@@@@                                             
+                                          @@@@@@@@@@@@@@@@@@@@@                     @@@@@@@@@@@@@@@@@@@@@                                             
+                                          @@@@@@@@@@@@@@@@@@@@@@                   @@@@@@@@@@@@@@@@@@@@@@                                             
+                                          @@@@@@@@@@@@@@@@@@@@@@                   @@@@@@@@@@@@@@@@@@@@@@                                             
+                                          @@@@@@@@@@@@@@@@@@@@@@@                 @@@@@@@@@@@@@@@@@@@@@@@                                             
+                                          @@@@@@@@@@@@@@@@@@@@@@@@               @@@@@@@@@@@@@@@@@@@@@@@@@                                            
+                                          @@@@@@@@@@@@@ @@@@@@@@@@@             @@@@@@@@@@ @@@@@@@@@@@@@@@                                            
+                                          @@@@@@@@@@@@@ @@@@@@@@@@@@           @@@@@@@@@@@ @@@@@@@@@@@@@@@                                            
+                                          @@@@@@@@@@@@@  @@@@@@@@@@@          @@@@@@@@@@@  @@@@@@@@@@@@@@@                                            
+                                         @@@@@@@@@@@@@@  @@@@@@@@@@@@         @@@@@@@@@@@  @@@@@@@@@@@@@@@                                            
+                                         @@@@@@@@@@@@@@   @@@@@@@@@@@@       @@@@@@@@@@@   @@@@@@@@@@@@@@@                                            
+                                         @@@@@@@@@@@@@@   @@@@@@@@@@@@@     @@@@@@@@@@@    @@@@@@@@@@@@@@@                                            
+                                         @@@@@@@@@@@@@@    @@@@@@@@@@@@@   @@@@@@@@@@@@    @@@@@@@@@@@@@@@                                            
+                                         @@@@@@@@@@@@@@     @@@@@@@@@@@@  @@@@@@@@@@@@     @@@@@@@@@@@@@@@                                            
+                                         @@@@@@@@@@@@@@      @@@@@@@@@@@@ @@@@@@@@@@@      @@@@@@@@@@@@@@@@                                           
+                                         @@@@@@@@@@@@@       @@@@@@@@@@@@@@@@@@@@@@@       @@@@@@@@@@@@@@@@                                           
+                                         @@@@@@@@@@@@@        @@@@@@@@@@@@@@@@@@@@@@       @@@@@@@@@@@@@@@@                                           
+                                         @@@@@@@@@@@@@         @@@@@@@@@@@@@@@@@@@@         @@@@@@@@@@@@@@@                                           
+                                        @@@@@@@@@@@@@@          @@@@@@@@@@@@@@@@@@          @@@@@@@@@@@@@@@                                           
+                                        @@@@@@@@@@@@@@          @@@@@@@@@@@@@@@@@           @@@@@@@@@@@@@@@                                           
+                                        @@@@@@@@@@@@@@           @@@@@@@@@@@@@@@@           @@@@@@@@@@@@@@@                                           
+                                        @@@@@@@@@@@@@@            @@@@@@@@@@@@@@            @@@@@@@@@@@@@@@                                           
+                                        @@@@@@@@@@@@@@             @@@@@@@@@@@@             @@@@@@@@@@@@@@@                                           
+                                        @@@@@@@@@@@@@@                                      @@@@@@@@@@@@@@@@                                          
+                                        @@@@@@@@@@@@@@                                      @@@@@@@@@@@@@@@@                                          
+                                        @@@@@@@@@@@@@@                                      @@@@@@@@@@@@@@@@                                          
+                                       @@@@@@@@@@@@@@                                       @@@@@@@@@@@@@@@@                                          
+                                       @@@@@@@@@@@@@@                                       @@@@@@@@@@@@@@@@                                          
+                                       @@@@@@@@@@@@@@                                       @@@@@@@@@@@@@@@@                                          
+                                       @@@@@@@@@@@@@@                                       @@@@@@@@@@@@@@@@                                          
+                                                                                                                                                      
+                                                                                                               ###############                        
+                         ####                                                                              ###################                        
+                            #######                                                                                      #####                        
+                               #########                                                                        #####   #####                        
+                                   #############                                                        ############    #####                         
+                                       ###################                                    ##################       ####                         
+                                            ###############################################################            ###                            
+                                                  ###################################################                 ##                             
+                                                          ##################################                                                          
+                                                                                                                                    
+-->

@@ -1,0 +1,263 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1E1F29;
+  font-family: Montserrat;
+}
+
+img#logo-fin {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  margin-top: 5%;
+}
+
+.perso-fin {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+}
+
+img#bulle-pdf {
+  position: absolute;
+  z-index: 3;
+  top: 10;
+  left: 57%;
+  width: 25%;
+}
+
+.fleche {
+  position: relative;
+  text-align: center;
+  font-size: 400%;
+}
+
+.fa-angle-double-down {
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-name: opac;
+  animation-iteration-count: infinite;
+  size: 20px;
+  color: #D10024;
+}
+
+@keyframes opac {
+  from {
+    color: #D10024;
+  }
+
+  to {
+    color: #1E1F29;
+  }
+}
+
+div#achats {
+  margin-top: 10%;
+}
+
+h2 {
+  color      : #D10024;
+  font-size  : 250%;
+  margin-left: 15%;
+}
+
+table#tab-achats {
+  border-collapse: collapse;
+  margin-left    : 15%;
+  font-size      : 130%;
+  color          : white;
+  text-align     : center;
+  margin-top     : 4%;
+  margin-bottom  : 4%;
+}
+
+table#tab-achats td {
+  border: 3px solid white;
+  width : 490px;
+  height: 70px;
+}
+
+.fleche-tab {
+  width: 5%;
+  margin-right: 2%;
+}
+
+div#interet {
+  width: 70%;
+  margin-left: 15%;
+  color: white;
+  font-size: 130%;
+}
+
+div#interet p {
+  margin: 0;
+}
+
+div#fin-conclusion {
+  width: 70%;
+  margin-left: 15%;
+  font-size: 130%;
+  color: white;
+  margin-bottom: 3%;
+}
+
+div#fin-conclusion p {
+  margin: 0;
+}
+
+.copyright {
+  text-align: center;
+  color: white;
+  margin-bottom: 1%;
+}
+
+.copyright a {
+  color: #D10024;
+}
+
+.red {
+  color: #D10024;
+}
+
+
+div.load {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1000000000000000;
+  background-color: #1E1F29;
+  opacity: 1;
+  transition-duration: 0.5s;
+}
+
+img#logo-load {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 30%;
+}
+
+div.loader {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80px;
+}
+
+p#txt-load {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 200%;
+  margin-top: 8%;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+
+#but-dl,#but-restart {
+  text-decoration: none;
+  display: block;
+  margin: 30px auto;
+  left: 50%;
+  z-index: 1001;
+  background-color: #D10024;
+  border: none;
+  height: 40px;
+  border-radius: 50px;
+  font-size: 0.9em;
+  font-style: 'Montserrat', sans-serif;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  stroke: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+#but-dl:hover,#but-restart:hover  {
+  cursor: pointer;
+  text-decoration: none;
+  transform: scale(1.2);
+}
+
+#but-dl:visited,#but-restart:visited  {
+  text-decoration: none;
+}
+
+.copyright {
+  padding-bottom: 30px;
+}

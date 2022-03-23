@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html id="html" lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>Magazon - Accueil</title>
+
+		<link rel="icon" href="img/favicon.ico" />
+
+		<!-- normalize -->
+		<link type="text/css" rel="stylesheet" href="css/normalize.css"/>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+		<link rel="icon" href="img/favicon.ico" />
+
+    </head>
+	<body>
+		<img id="check-out-img" src="img/check-out.svg">
+		<a href="fin.html">
+		<input id="but-check" type="button" name="accepter" value="Check-out">
+		</a>
+		<input class="cursor" id="close2" onclick="close2()" type="button" name="fermer" value="Fermer">
+		<div id="bg_pop_up"></div>
+		<!-- HEADER -->
+		<header>
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="index.html" class="logo">
+									<img src="./img/logo.png" alt="logotype">
+								</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
+
+						<!-- ACCOUNT -->
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+								<!-- porte monnaie -->
+								<div >
+									<a >
+										<div id="coins">
+											<i class="fas fa-coins"><img src="img/coins-solid.svg"></i>
+										<div id="price">
+										<script type="text/javascript">
+    										var coins = localStorage.getItem("coins");
+    										document.write(coins);
+										</script>
+										</div>
+										
+										</div>
+										<span>Porte monnaie</span>
+									</a>
+								</div>
+								<!-- /porte monnaie -->
+								
+								<!-- Cart -->
+								<div id="check-out" class="dropdown">
+									<a onClick="popup_checkout()" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-sign-out"></i>
+										<span>Check-out</span>
+									</a>
+								<!-- /Cart -->
+
+								<!-- Menu Toogle -->
+								<div class="menu-toggle">
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Menu</span>
+									</a>
+								</div>
+								<!-- /Menu Toogle -->
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li class="active"><a href="index.html">Accueil</a></li>
+						<li><a href="store_jv.html">Jeux vidéo</a></li>
+						<li><a href="store_sports.html">Sport</a></li>
+						<li><a href="store_livres.html">Livres</a></li>
+						<li><a href="store_vetements.html">Vêtements</a></li>
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		<!-- /NAVIGATION -->
+
+		<!-- SECTION -->
+		<div class="section" id="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<a href="store_jv.html" class="lien"></a>
+							<div class="shop-img">
+								<img src="./img/shop01.png" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Jeux vidéo</h3>
+								<a href="store_jv.html" class="cta-btn">Visiter <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<a href="store_sports.html" class="lien"></a>
+							<div class="shop-img">
+								<img src="./img/shop02.png" alt="">
+								
+							</div>
+							<div class="shop-body">
+								<h3>Sport</h3>
+								<a href="store_sports.html" class="cta-btn">Visiter <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<a href="store_livres.html" class="lien"></a>
+							<div class="shop-img">
+								<img src="./img/shop03.png" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Livres</h3>
+								<a href="store_livres.html" class="cta-btn">Visiter <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+
+					<!-- shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<a href="store_vetements.html" class="lien"></a>
+							<div class="shop-img">
+								<img src="./img/shop04.png" alt="">
+								
+							</div>
+							<div class="shop-body">
+								<h3>Vêtements</h3>
+								<a href="store_vetements.html" class="cta-btn">Visiter <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- /shop -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- CHARACTER SECTION -->
+		<div id="hot-deal" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="hot-deal">
+							<ul class="hot-deal-countdown">
+								<img id="homme" src="img/emeric_face.png">
+								<img id="femme" src="img/girl.png">
+								<img id="bulle" src="img/bulle.png">
+								
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /HOT DEAL SECTION -->
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<!-- top footer -->
+			<div class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Qui sommes-nous ?</h3>
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-map-marker"></i>IUT de Chambéry<br>73370 Le Bourget-du-Lac</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>mmissiontp22@gmail.com</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Catégories</h3>
+								<ul class="footer-links">
+									<li><a href="store_jv.html">Jeux vidéo</a></li>
+									<li><a href="store_sports.html">Sport</a></li>
+									<li><a href="store_livres.html">Livres</a></li>
+									<li><a href="store_vetements.html">Vêtements</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix visible-xs"></div>
+
+						
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Service</h3>
+								<ul class="footer-links">
+									<li><a href="index.html">Recommencer</a></li>
+									<li><a href="mentions_legales.html">Mentions légales</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /top footer -->
+
+			<!-- bottom footer -->
+			<div id="bottom-footer" class="section">
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<ul class="footer-payments">
+								<li><a ><i class="fa fa-cc-visa"></i></a></li>
+								<li><a ><i class="fa fa-credit-card"></i></a></li>
+								<li><a ><i class="fa fa-cc-paypal"></i></a></li>
+								<li><a ><i class="fa fa-cc-mastercard"></i></a></li>
+								<li><a ><i class="fa fa-cc-discover"></i></a></li>
+								<li><a ><i class="fa fa-cc-amex"></i></a></li>
+							</ul>
+							<span class="copyright">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website was made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">MMI'ssion</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</span>
+						</div>
+					</div>
+						<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /bottom footer -->
+		</footer>
+		<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/fonctions.js"></script>
+		<script src="js/accueil.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+</html>

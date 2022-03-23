@@ -1,0 +1,162 @@
+#persos{
+  display: flex;
+}
+
+#bouton{
+  display:block;
+}
+
+#logo{
+  display:block;
+}
+
+#copyright{
+  display:block;
+}
+
+div#vid-intro{
+  display:none;
+}
+
+#lavideoH{
+  display:none;
+}
+
+#lavideoF{
+  display:none;
+}
+
+#video-fond {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+#video-fond > video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+input#but-cookies-H{
+  display:none;
+  position:absolute;
+  z-index: 5;
+  background-color: #D10024;
+  border:none;
+  height:7%;
+  border-radius: 50px;
+  font-family: 'Montserrat';
+  color:white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: -6px 6px 12px #aaa;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+
+input#but-cookies-F{
+  display:none;
+  position:absolute;
+  z-index: 5;
+  background-color: #D10024;
+  border:none;
+  height:7%;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  color:white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: -6px 6px 12px #aaa; 
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+
+input#but-cookies-H:hover{
+  transform: scale(1.2) translate(-40%, -40%);
+  background-color: #1E1F29;
+}
+
+input#but-cookies-F:hover{
+  transform: scale(1.2) translate(-40%, -40%);
+  background-color: #1E1F29;
+}
+
+img#cookie{
+  display:none;
+  position:absolute;
+  z-index: 1;
+  width: 1000px;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+}
+
+input.button-N{
+  display:none;
+  position:absolute;
+  right:5px;
+ top: 37%;
+  z-index: 5;
+  background-color: #D10024;
+  border:none;
+  width:100px;
+  height:7%;
+  border-radius: 50px;
+  font-family: 'Montserrat';
+  color:white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: -6px 6px 12px #aaa;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+input.button-N:hover{
+  transform: scale(1.2) translate(-40%, -40%);
+  background-color: #1E1F29;
+}
+
+/* 1. Pas de support d'object-fit */
+@media (min-aspect-ratio: 16/9) {
+  #video-fond > video {
+    height: 300%;
+    top: -100%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  #video-fond > video {
+    width: 300%;
+    left: -100%;
+  }
+}
+/* 2. En cas de support d'object-fit, écrase les règles en (1) */
+@supports (object-fit: cover) {
+  #video-fond > video {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+
+
+@media screen and (min-width: 1600px) {
+
+input#but-cookies-H{
+  top: 42%;
+
+}
+
+input#but-cookies-F{
+  top: 42%;
+
+}
+}
